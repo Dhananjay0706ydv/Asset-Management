@@ -27,6 +27,7 @@ Because this project is containerized, you do **not** need to install Node.js, R
    * **Important:** Make sure the Docker Desktop application is actually open and running in the background before typing any commands.
 
 ---
+
 ## 🔑 Environment Variables
 
 Because this project uses secure authentication and a database, you need to set up your local environment variables before running Docker.
@@ -43,12 +44,53 @@ JWT_SECRET="any_random_secure_text_here"
 
 # Any other VestAuth or API keys you used
 # VESTAUTH_API_KEY="your_key_here"
+```
 
-**## 🚀 Installation & Setup**
+---
+
+## 🚀 Installation & Setup
 
 1. **Clone the repository:**
    Open your terminal and run:
    ```bash
-   git clone https://github.com/Dhananjay0706ydv/Asset-Management.git
+   git clone [https://github.com/Dhananjay0706ydv/Asset-Management.git](https://github.com/Dhananjay0706ydv/Asset-Management.git)
+   ```
 
-   
+2. **Navigate into the project folder:**
+   ```bash
+   cd Asset-Management
+   ```
+
+3. **Start the application:**
+   Tell Docker to build the images and spin up the frontend, backend, and database:
+   ```bash
+   docker compose up --build
+   ```
+   *(Wait until the terminal says `webpack compiled successfully` and `Server is running on port 8000`)*
+
+---
+
+## 🌐 Direct URLs (Check in Browser)
+
+Once the Docker containers are running successfully, click the links below to view the application in your browser:
+
+* **Frontend (Main Website):** [http://localhost:3000](http://localhost:3000)
+* **Backend API (Server):** [http://localhost:8000](http://localhost:8000)
+
+---
+
+## 🛑 Stopping the Server
+
+To safely shut down the application and database, go back to the terminal where Docker is running and press:
+**`Control + C`**
+
+If you want to completely remove the containers and clear the state, run:
+```bash
+docker compose down
+```
+
+---
+
+## 🐛 Troubleshooting
+* **Error: Port already in use:** If you get an error that port 3000 or 8000 is taken, ensure you don't have another server running in the background. 
+* **Changes aren't showing up:** If you modify the code and don't see the updates, stop the server and force a fresh build using `docker compose up --build`.
