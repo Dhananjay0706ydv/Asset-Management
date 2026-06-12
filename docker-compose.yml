@@ -1,1 +1,20 @@
+version: '3.8'
 
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      - PORT=8000
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true # Keeps the React app running
+    tty: true
+    depends_on:
+      - backend
