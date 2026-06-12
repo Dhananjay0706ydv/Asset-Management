@@ -1,1 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
 
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Admin Users
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now())
+}
+
+// The Equipment Inventory
+model Asset {
+  id                String    @id @default(uuid())
+  name              String
+  category          String
+  description       String
+  totalQuantity     Int
+  availableQuantity Int
+  bookings          Booking[] // This links to the Booking table
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+// The Tracking Ledger (Who borrowed what)
+model Booking {
+  id           String   @id @default(uuid())
+  assetId      String
+  asset        Asset    @relation(fields: [assetId], references: [id])
+  requestedQty Int
+  startDate    DateTime
+  endDate      DateTime
+  
+  // NEW: The Borrower Details
+  borrowerName String   
+  borrowerId   String   // Roll Number, Club Name, etc.
+  
+  createdAt    DateTime @default(now())
+}
