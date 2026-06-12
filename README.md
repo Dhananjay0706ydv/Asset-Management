@@ -66,14 +66,13 @@ JWT_SECRET="any_random_secure_text_here"
    ```bash
    docker compose up --build
    ```
+   *(Wait until the terminal says `webpack compiled successfully` and `Server is running on port 8000`)*
 
    ## 🔐 Default Login Credentials
 
-To explore the admin dashboard locally, you can log in using the following test account:
-* **Email:** `admin@iitr.ac.in`
-* **Password:** `password123`
-* 
-   *(Wait until the terminal says `webpack compiled successfully` and `Server is running on port 8000`)*
+   To explore the admin dashboard locally, you can log in using the following test account:
+   * **Email:** `admin@iitr.ac.in`
+   * **Password:** `password123`
 
 ---
 
