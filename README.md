@@ -27,8 +27,24 @@ Because this project is containerized, you do **not** need to install Node.js, R
    * **Important:** Make sure the Docker Desktop application is actually open and running in the background before typing any commands.
 
 ---
+## 🔑 Environment Variables
 
-## 🚀 Installation & Setup
+Because this project uses secure authentication and a database, you need to set up your local environment variables before running Docker.
+
+1. Create a file named `.env` in the `backend` folder (or your root folder, depending on your setup).
+2. Add the following keys to the file and fill them in with your own credentials:
+
+```text
+# Database connection string (MongoDB)
+DATABASE_URL="your_mongodb_connection_string_here"
+
+# Authentication secret for JSON Web Tokens
+JWT_SECRET="any_random_secure_text_here"
+
+# Any other VestAuth or API keys you used
+# VESTAUTH_API_KEY="your_key_here"
+
+**## 🚀 Installation & Setup**
 
 1. **Clone the repository:**
    Open your terminal and run:
