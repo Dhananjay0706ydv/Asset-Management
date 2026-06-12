@@ -33,7 +33,6 @@ Because this project is containerized, you do **not** need to install Node.js, R
 1. **Clone the repository:**
    Open your terminal and run:
    ```bash
-   git clone [https://github.com/yourusername/iitr-asset-management.git](https://github.com/yourusername/iitr-asset-management.git)
-
+   git clone https://github.com/Dhananjay0706ydv/Asset-Management.git
 
    
